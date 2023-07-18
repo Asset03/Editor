@@ -11,7 +11,7 @@
       </li>
     </ul>
     <div v-for="(value, key) in messages" :key="key">
-      <MessageItem :item="value" :index="key" />
+      <MessageItem :item="value" :index="key" :messages="messages" />
     </div>
     <RemoveModal />
     <AddProperty />
@@ -20,7 +20,7 @@
 
 <script>
 import axios from "axios";
-import { onMounted, computed, provide, ref, reactive } from "vue";
+import { onMounted, computed, provide, ref, reactive, watch } from "vue";
 import { useMessageStore } from "@/store/message.pinia.js";
 
 import MessageItem from "./components/MessageItem.vue";
@@ -64,10 +64,12 @@ export default {
     const isAddPropertyModalOpened = ref(false);
 
     const onClickRemoveItem = () => {
-      // delete messages.value[dataRemoveModal.data];
-      console.log("DOTS: ", Object.entries(dots.value)[5][0]);
-      console.log("DATA: ", dataRemoveModal.data);
+      delete dataRemoveModal.data.messages[dataRemoveModal.data.index];
+      dataRemoveModal.opened = false;
+      console.log("MESSAGE: ", messages.value);
+      store.setMessages(messages);
     };
+
     provide("onClickRemoveItem", onClickRemoveItem);
 
     provide("dataRemoveModal", dataRemoveModal);

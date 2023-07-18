@@ -18,7 +18,7 @@
         <div class="modal-body">
           <p>
             Are you sure you want to remove
-            <strong>{{ dataRemoveModal.data }}</strong
+            <strong>{{ dataRemoveModal.data.index }}</strong
             >?
           </p>
         </div>
