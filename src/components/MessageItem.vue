@@ -20,38 +20,41 @@
           <strong v-if="!editKey">{{ index }}</strong>
           <input v-else @blur="editKey = !editKey" :value="index" />:
           <span
-            v-if="!isObjectOpened(index) && !isEmpty(item)"
+            v-if="!isObjectOpened(index)"
             class="ms-2 text-decoration-underline"
-            >{...}</span
+            :class="{ empty: isEmpty(item) }"
+            >{{ isEmpty(item) ? "empty" : "{...}" }}</span
           >
           <!-- write here in empty case -->
-        </div>
-        <!-- actions -->
-        <div class="actions d-flex align-item-center">
-          <a class="ms-2" @click="onClickEditKey"
-            ><i class="fa-solid fa-key"></i
-          ></a>
-          <a class="ms-2"><i class="fa-solid fa-circle-plus"></i></a>
-          <a class="ms-2" @click="onClickOpenRemoveModal"
-            ><i class="fa-solid fa-trash"></i
-          ></a>
-          <!-- dropdown -->
-          <div class="dropdown ms-2">
-            <button
-              class="btn btn-sm btn-secondary dropdown-toggle"
-              type="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Object
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a class="dropdown-item" @click="onClickChangeToObjectOrString"
-                  >String</a
-                >
-              </li>
-            </ul>
+          <!-- actions -->
+          <div class="actions d-flex align-item-center">
+            <a class="ms-2" @click="onClickEditKey"
+              ><i class="fa-solid fa-key"></i
+            ></a>
+            <a class="ms-2"><i class="fa-solid fa-circle-plus"></i></a>
+            <a class="ms-2" @click="onClickOpenRemoveModal"
+              ><i class="fa-solid fa-trash"></i
+            ></a>
+            <!-- dropdown -->
+            <div class="dropdown ms-2">
+              <button
+                class="btn btn-sm btn-secondary dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Object
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    @click="onClickChangeToObjectOrString"
+                    >String</a
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -76,9 +79,12 @@
           :value="index"
           @change="onChangeIndex"
         />:
-        <span v-if="!isEmpty(item)" class="ms-2 text-decoration-underline">{{
-          item
-        }}</span>
+        <span
+          v-if="!editValue"
+          class="ms-2 text-decoration-underline"
+          :class="{ empty: isEmpty(item) }"
+          >{{ isEmpty(item) ? "empty" : item }}</span
+        >
         <input
           v-else
           type="text"
@@ -167,17 +173,15 @@ export default {
     };
 
     const onClickChangeToObjectOrString = () => {
-      console.log("ME: ", props.messages[props.index]);
       if (isObject(props.messages[props.index])) {
         // to String
         props.messages[props.index] = "";
-        console.log("1: ", props.messages[props.index]);
       } else {
         // to Object
         props.messages[props.index] = {};
-        console.log("2: ", props.messages[props.index]);
       }
-      console.log("ITEM: ", props.messages);
+      // axios post
+      console.log(props.messages);
     };
 
     const onClickEditKey = () => {
@@ -185,6 +189,7 @@ export default {
     };
     const onChangeIndex = (event) => {
       console.log(event.target.value);
+      // change
     };
 
     const onClickEditValue = () => {
@@ -218,4 +223,20 @@ export default {
   },
 };
 </script>
-<style></style>
+<style>
+.actions {
+  opacity: 0;
+}
+.index:hover .actions {
+  opacity: 1;
+}
+
+.empty {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 2px 12px;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+}
+</style>

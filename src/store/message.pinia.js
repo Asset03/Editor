@@ -22,8 +22,8 @@ export const useMessageStore = defineStore("messages", {
     },
     setMessagesByIndex(messages, index, val) {
       messages[index] = val;
-      console.log(this.messages);
-      // this.messages = messages;
+      this.setMessages(this.messages);
+      // axios post
     },
     removeItem(mess, index) {
       delete mess[index];
