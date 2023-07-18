@@ -1,0 +1,121 @@
+{
+    "common": {
+        "continue": "Продолжать",
+        "cancel": "Отмена",
+        "save": "Сохранять",
+        "edit": "Редактировать",
+        "delete": "Удалить",
+        "remove": "Удалять",
+        "update": "Обновлять",
+        "copy": "Копировать",
+        "search": "Поиск",
+        "more": "Более",
+        "submit": "Представлять на рассмотрение",
+        "confirm": "Подтверждать",
+        "no-data": "Данные недоступны",
+        "next": "Следующий",
+        "previous": "Предыдущий",
+        "restart": "Запустить снова",
+        "no-messages": "Нет сообщений",
+        "layout": {
+            "drawers": {
+                "activity": {
+                    "header": "События календаря",
+                    "event-description": "{title} начинается {startDate} в {startTime} и будет/было завершено {endDate} в {endTime}"
+                }
+            },
+            "menus": {
+                "quick-links": {
+                    "title": "Быстрые ссылки",
+                    "rules-and-regulations": "Правила и положения",
+                    "reports": "отчеты",
+                    "services": "Услуги",
+                    "academic-activities": "Академическая деятельность"
+                },
+                "notifications": {
+                    "title": "Уведомления",
+                    "no-notifications": "Нет уведомлений",
+                    "updates": "Обновления",
+                    "announcements": "Трансляции"
+                }
+            },
+            "sidebar": {
+                "menu": {
+                    "dashboard": {
+                        "heading": "Приборная доска",
+                        "pages": {
+                            "dashboard": "Приборная доска"
+                        }
+                    },
+                    "release": {
+                        "heading": "Система",
+                        "pages": {
+                            "changelog": "Список изменений",
+                            "support": "Поддерживать"
+                        }
+                    }
+                },
+                "footer": {
+                    "title": "Руководства и документы",
+                    "title-tooltip": "Изучите наши руководства и документацию, чтобы узнать больше об использовании нашей платформы."
+                }
+            },
+            "footer": {
+                "about-title": "О",
+                "support-title": "Поддерживать",
+                "privacy-policy-title": "Политика конфиденциальности"
+            },
+            "mode": {
+                "light": "Легкий",
+                "dark": "Темный",
+                "auto": "Авто"
+            },
+            "header": {
+                "user-menu": {
+                    "my-profile": "Мой профиль",
+                    "my-courses": "Мои курсы",
+                    "course-schedule": "Расписание курсов",
+                    "electronic-attendance": "Электронная посещаемость",
+                    "grade-submission": "Отправка оценок",
+                    "my-students": "Мои студенты или ученики",
+                    "academic-students": "Ученики",
+                    "students-search": "Поиск студента",
+                    "system-calendar": "Системный календарь",
+                    "rules-and-regulations": "Правила и положения",
+                    "language": "Язык",
+                    "settings": "Настройки",
+                    "sign-out": "выход"
+                }
+            }
+        },
+        "alert-service": {
+            "confirm": "Подтверждать",
+            "are-you-sure": "Ты уверен?",
+            "yes-continue": "Да, продолжить",
+            "no-cancel": "Нет, отменить"
+        },
+        "pages": {
+            "error-not-found-page": "Страница не найдена"
+        }
+    },
+    "phrases": {
+        "please-wait": "Пожалуйста подождите...",
+        "view-all": "Посмотреть все",
+        "go-back": "Вернись",
+        "no-records": "Нет записей",
+        "launch-tour-title": "Стартовый тур",
+        "message-send-at-by": "Отправлено в {sendAt} пользователем {sentBy}",
+        "system": {
+            "error-404": {
+                "title": "Упс",
+                "message": "Страница, которую вы ищете, не найдена.",
+                "back": "Вернуться домой"
+            },
+            "error-500": {
+                "title": "Системная ошибка",
+                "message": "Что-то пошло не так! Пожалуйста, попробуйте позже.",
+                "back": "Вернуться домой"
+            }
+        }
+    }
+}

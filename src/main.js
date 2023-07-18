@@ -1,4 +1,9 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap";
+import App from "./App.vue";
+import { vuePinia } from "./pinia";
 
-createApp(App).mount('#app')
+const pinia = vuePinia();
+
+createApp(App).use(pinia).mount("#app");
