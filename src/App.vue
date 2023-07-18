@@ -59,7 +59,7 @@ export default {
     };
 
     const dataRemoveModal = reactive({ opened: false, data: {} });
-    const dataAddPropertyModal = reactive({ opened: true, data: {} });
+    const dataAddPropertyModal = reactive({ opened: false, data: {} });
 
     const onClickRemoveItem = () => {
       delete dataRemoveModal.data.messages[dataRemoveModal.data.index];

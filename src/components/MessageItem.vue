@@ -17,7 +17,9 @@
         </button>
         <!-- index -->
         <div class="index d-flex align-items-center">
-          <strong v-if="!editKey">{{ index }}</strong>
+          <strong v-if="!editKey" :class="{ empty: isEmpty(index) }">{{
+            isEmpty(index) ? "empty key" : index
+          }}</strong>
           <input
             v-else
             @blur="editKey = !editKey"
@@ -79,7 +81,9 @@
     <div v-else>
       <!--  -->
       <div class="index d-flex align-items-center">
-        <strong v-if="!editKey">{{ index }}</strong>
+        <strong v-if="!editKey" :class="{ empty: isEmpty(index) }">{{
+          isEmpty(index) ? "empty key" : index
+        }}</strong>
         <input
           v-else
           @blur="editKey = !editKey"
