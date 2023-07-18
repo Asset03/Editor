@@ -5,7 +5,6 @@ export const useMessageStore = defineStore("messages", {
     return {
       currentLanguage: "en",
       messages: {},
-      languages: [],
     };
   },
   getters: {
@@ -29,6 +28,19 @@ export const useMessageStore = defineStore("messages", {
       delete mess[index];
     },
     updateValue(key, value) {},
-    updateKey(key, value) {},
+    updateKey(messages, oldIndex, newIndex) {
+      const keys = Object.keys(messages);
+      const newObj = {};
+      for (let i = 0; i < keys.length; i++) {
+        const key = keys[i];
+        const value = messages[key];
+        const myKey = key === oldIndex ? newIndex : key;
+        newObj[myKey] = value;
+      }
+      this.setMessagesByCurrentLanguage(newObj);
+    },
+    setMessagesByCurrentLanguage(messages) {
+      this.messages[this.currentLanguage] = messages;
+    },
   },
 });

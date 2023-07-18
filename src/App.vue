@@ -27,7 +27,6 @@ import MessageItem from "./components/MessageItem.vue";
 import RemoveModal from "./components/RemoveModal.vue";
 import AddProperty from "./components/AddProperty.vue";
 
-import { useApp } from "@/app";
 export default {
   name: "App",
   components: {
@@ -38,7 +37,6 @@ export default {
   setup() {
     const store = useMessageStore();
 
-    const { dotNotationToObject, objectToDotNotation } = useApp();
     const languages = computed(() => store.getLanguages);
     const messages = computed(() => store.getMessages);
     const currentLanguage = computed(() => store.getCurrentLanguage);
@@ -61,7 +59,7 @@ export default {
     };
 
     const dataRemoveModal = reactive({ opened: false, data: {} });
-    const isAddPropertyModalOpened = ref(false);
+    const dataAddPropertyModal = reactive({ opened: true, data: {} });
 
     const onClickRemoveItem = () => {
       delete dataRemoveModal.data.messages[dataRemoveModal.data.index];
@@ -73,7 +71,7 @@ export default {
     provide("onClickRemoveItem", onClickRemoveItem);
 
     provide("dataRemoveModal", dataRemoveModal);
-    provide("isAddPropertyModalOpened", isAddPropertyModalOpened);
+    provide("dataAddPropertyModal", dataAddPropertyModal);
     return {
       languages,
       currentLanguage,

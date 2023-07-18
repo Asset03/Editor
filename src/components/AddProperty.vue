@@ -3,7 +3,7 @@
     class="modal"
     tabindex="-1"
     role="dialog"
-    :class="{ ' d-block': isAddPropertyModalOpened }"
+    :class="{ ' d-block': dataAddPropertyModal.opened }"
   >
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -12,7 +12,7 @@
           <button
             type="button"
             class="btn-close"
-            @click="isAddPropertyModalOpened = !isAddPropertyModalOpened"
+            @click="dataAddPropertyModal.opened = !dataAddPropertyModal.opened"
           ></button>
         </div>
         <div class="modal-body">
@@ -52,7 +52,7 @@
           <button
             type="button"
             class="btn btn-secondary"
-            @click="isAddPropertyModalOpened = !isAddPropertyModalOpened"
+            @click="dataAddPropertyModal.opened = !dataAddPropertyModal.opened"
           >
             Cancel
           </button>
@@ -69,13 +69,54 @@
   </div>
 </template>
 <script>
-import { inject } from "vue";
+import { inject, ref, computed } from "vue";
+import { useMessageStore } from "@/store/message.pinia";
 export default {
   name: "AddProperty",
   props: {},
   setup() {
-    const isAddPropertyModalOpened = inject("isAddPropertyModalOpened");
-    return { isAddPropertyModalOpened };
+    const store = useMessageStore();
+    const messages = computed(() => store.getMessages);
+
+    const dataAddPropertyModal = inject("dataAddPropertyModal");
+    const isString = ref(true);
+    const newKey = ref("");
+    const newValue = ref("");
+
+    const isObjectOrString = (event) => {
+      if (event.target.value == "Value") {
+        isString.value = true;
+      } else {
+        isString.value = false;
+      }
+    };
+
+    const onClickAddProperty = () => {
+      dataAddPropertyModal.opened = false;
+      if (isString.value) {
+        dataAddPropertyModal.data.messages[dataAddPropertyModal.data.index][
+          newKey.value
+        ] = newValue.value;
+      } else {
+        const newObject = { [newKey.value]: {} };
+        dataAddPropertyModal.data.messages[dataAddPropertyModal.data.index] = {
+          ...dataAddPropertyModal.data.messages[
+            dataAddPropertyModal.data.index
+          ],
+          ...newObject,
+        };
+        store.setMessages(messages);
+      }
+      console.log("EX: ", store.getMessages);
+    };
+    return {
+      dataAddPropertyModal,
+      isObjectOrString,
+      isString,
+      newKey,
+      newValue,
+      onClickAddProperty,
+    };
   },
 };
 </script>

@@ -18,7 +18,12 @@
         <!-- index -->
         <div class="index d-flex align-items-center">
           <strong v-if="!editKey">{{ index }}</strong>
-          <input v-else @blur="editKey = !editKey" :value="index" />:
+          <input
+            v-else
+            @blur="editKey = !editKey"
+            :value="index"
+            @change="onChangeIndex"
+          />:
           <span
             v-if="!isObjectOpened(index)"
             class="ms-2 text-decoration-underline"
@@ -31,7 +36,9 @@
             <a class="ms-2" @click="onClickEditKey"
               ><i class="fa-solid fa-key"></i
             ></a>
-            <a class="ms-2"><i class="fa-solid fa-circle-plus"></i></a>
+            <a class="ms-2" @click="onClickOpenAddPropertyModal"
+              ><i class="fa-solid fa-circle-plus"></i
+            ></a>
             <a class="ms-2" @click="onClickOpenRemoveModal"
               ><i class="fa-solid fa-trash"></i
             ></a>
@@ -130,6 +137,7 @@
 import MessageItem from "@/components/MessageItem.vue";
 import { useMessageStore } from "@/store/message.pinia";
 import { computed, ref, inject, provide, onMounted, reactive } from "vue";
+
 export default {
   name: "MessageItem",
   components: {
@@ -149,6 +157,9 @@ export default {
   setup(props) {
     const store = useMessageStore();
 
+    onMounted(() => {
+      // console.log("DATA: ", store.getMessages);
+    });
     const openNodes = ref([]);
     const editKey = ref(false);
     const editValue = ref(false);
@@ -188,7 +199,8 @@ export default {
       editKey.value = !editKey.value;
     };
     const onChangeIndex = (event) => {
-      console.log(event.target.value);
+      // console.log(event.target.value);
+      store.updateKey(props.messages, props.index, event.target.value);
       // change
     };
 
@@ -197,13 +209,21 @@ export default {
     };
     const onChangeValue = (event) => {
       store.setMessagesByIndex(props.messages, props.index, event.target.value);
-      console.log("Store: ", store.getMessages);
     };
     const dataRemoveModal = inject("dataRemoveModal");
+    const dataAddPropertyModal = inject("dataAddPropertyModal");
 
     const onClickOpenRemoveModal = () => {
       dataRemoveModal.opened = true;
       dataRemoveModal.data = { index: props.index, messages: props.messages };
+    };
+
+    const onClickOpenAddPropertyModal = () => {
+      dataAddPropertyModal.opened = true;
+      dataAddPropertyModal.data = {
+        messages: props.messages,
+        index: props.index,
+      };
     };
     return {
       isObject,
@@ -212,6 +232,7 @@ export default {
       openNodes,
       isEmpty,
       onClickOpenRemoveModal,
+      onClickOpenAddPropertyModal,
       onClickChangeToObjectOrString,
       onClickEditKey,
       editKey,
