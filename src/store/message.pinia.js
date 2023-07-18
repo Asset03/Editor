@@ -5,14 +5,13 @@ export const useMessageStore = defineStore("messages", {
     return {
       currentLanguage: "en",
       messages: {},
-      messagesByIndex: {},
+      languages: [],
     };
   },
   getters: {
     getCurrentLanguage: (state) => state.currentLanguage,
-    getMessages: (state) => state.messages,
-    getMessageByLanguage: (state) => state.messages[state.currentLanguage],
-    getMessagesByIndex: (state) => state.messagesByIndex,
+    getMessages: (state) => state.messages[state.currentLanguage],
+    getLanguages: (state) => Object.keys(state.messages),
   },
   actions: {
     setCurrentLanguage(currentLanguage) {
@@ -21,8 +20,10 @@ export const useMessageStore = defineStore("messages", {
     setMessages(messages) {
       this.messages = messages;
     },
-    setMessagesByIndex(messages, index) {
-      this.messagesByIndex = messages[index];
+    setMessagesByIndex(messages, index, val) {
+      messages[index] = val;
+      console.log(this.messages);
+      // this.messages = messages;
     },
     removeItem(mess, index) {
       delete mess[index];

@@ -39,13 +39,13 @@ export default {
     const store = useMessageStore();
 
     const { dotNotationToObject, objectToDotNotation } = useApp();
-    const languages = computed(() => Object.keys(store.getMessages));
-    const messages = computed(() => store.getMessageByLanguage);
+    const languages = computed(() => store.getLanguages);
+    const messages = computed(() => store.getMessages);
     const currentLanguage = computed(() => store.getCurrentLanguage);
+
     const changeLanguage = computed(
       () => (val) => store.setCurrentLanguage(val)
     );
-    const dots = computed(() => objectToDotNotation(messages.value));
 
     onMounted(() => {
       fetchData();
@@ -78,7 +78,6 @@ export default {
       languages,
       currentLanguage,
       changeLanguage,
-      dots,
       messages,
     };
   },

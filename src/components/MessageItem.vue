@@ -1,7 +1,7 @@
 <template>
   <div class="mt-3 mb-3 ps-5">
     <!-- if object -->
-    <div v-if="isObject">
+    <div v-if="isObject(item)">
       <div class="d-flex align-item-center">
         <!-- toggle -->
         <button
@@ -76,14 +76,12 @@
           :value="index"
           @change="onChangeIndex"
         />:
-        <span
-          v-if="!isEmpty(item) && !editValue"
-          class="ms-2 text-decoration-underline"
-          >{{ item }}</span
-        >
+        <span v-if="!isEmpty(item)" class="ms-2 text-decoration-underline">{{
+          item
+        }}</span>
         <input
           v-else
-          type="textarea"
+          type="text"
           :value="item"
           @blur="editValue = !editValue"
           @change="onChangeValue"
@@ -145,39 +143,41 @@ export default {
   setup(props) {
     const store = useMessageStore();
 
-    const openNodes = reactive([]);
+    const openNodes = ref([]);
     const editKey = ref(false);
     const editValue = ref(false);
 
     const onClickToggleObject = computed(() => (node) => {
       if (isObjectOpened(node)) {
-        openNodes = openNodes.filter((n) => n !== node);
+        openNodes.value = openNodes.value.filter((n) => n !== node);
       } else {
-        openNodes.push(node);
+        openNodes.value.push(node);
       }
-      console.log(isObjectOpened(node));
     });
 
     const isObjectOpened = (node) => {
-      return openNodes.includes(node);
+      return openNodes.value.includes(node);
     };
 
-    const isObject = computed(() => {
-      return typeof props.item == "object";
-    });
+    const isObject = (val) => {
+      return typeof val === "object";
+    };
     const isEmpty = (node) => {
       return node == "" || Object.keys(node).length == 0;
     };
 
     const onClickChangeToObjectOrString = () => {
       console.log("ME: ", props.messages[props.index]);
-      if (isObject) {
+      if (isObject(props.messages[props.index])) {
         // to String
         props.messages[props.index] = "";
+        console.log("1: ", props.messages[props.index]);
       } else {
         // to Object
         props.messages[props.index] = {};
+        console.log("2: ", props.messages[props.index]);
       }
+      console.log("ITEM: ", props.messages);
     };
 
     const onClickEditKey = () => {
@@ -191,8 +191,8 @@ export default {
       editValue.value = !editValue.value;
     };
     const onChangeValue = (event) => {
-      store.setMessagesByIndex(props.messages, props.index);
-      console.log("Store: ", store.getMessagesByIndex);
+      store.setMessagesByIndex(props.messages, props.index, event.target.value);
+      console.log("Store: ", store.getMessages);
     };
     const dataRemoveModal = inject("dataRemoveModal");
 
