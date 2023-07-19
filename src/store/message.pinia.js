@@ -1,12 +1,16 @@
 import { defineStore } from "pinia";
 import axios from "axios";
 
+import { useApp } from "@/app";
+
+const { objectToDotNotation, dotNotationToObject } = useApp();
 export const useMessageStore = defineStore("messages", {
   state: () => {
     return {
       currentLanguage: "en",
       messages: {}, // en-{},ru-{},kz-{},
-      indexes: [],
+      path: "",
+      dotNotations: {},
     };
   },
   getters: {
@@ -14,9 +18,18 @@ export const useMessageStore = defineStore("messages", {
     getMessagesByCurrentLanguage: (state) =>
       state.messages[state.currentLanguage],
     getLanguages: (state) => Object.keys(state.messages),
-    getIndexes: (state) => state.indexes,
+    getPath: (state) => state.path,
+    getDotNotations: (state) => state.dotNotations,
   },
   actions: {
+    addPath(index) {
+      this.path += index;
+    },
+    removePath() {
+      let arr = this.path.split(".");
+      arr.pop();
+      this.path = arr.join(".");
+    },
     setCurrentLanguage(currentLanguage) {
       this.currentLanguage = currentLanguage;
     },
@@ -34,7 +47,7 @@ export const useMessageStore = defineStore("messages", {
           { data }
         )
         .then(() => {
-          console.log(data);
+          console.log("updated");
         })
         .catch((err) => {
           console.error(err);
@@ -46,18 +59,22 @@ export const useMessageStore = defineStore("messages", {
       // axios post
     },
 
-    updateKey(messages, oldIndex, newIndex) {
-      const keys = Object.keys(messages);
-      const newObj = {};
-      for (let i = 0; i < keys.length; i++) {
-        const key = keys[i];
-        const value = messages[key];
-        const myKey = key === oldIndex ? newIndex : key;
-        newObj[myKey] = value;
-      }
-      messages = newObj;
-      console.log("NEW: ", messages);
-      this.setMessagesByCurrentLanguage(this.getMessagesByCurrentLanguage);
+    updateKey(path, newIndex) {
+      this.setDotNotations(this.getMessagesByCurrentLanguage);
+      let jsonString = JSON.stringify(this.dotNotations);
+      this.removePath();
+
+      this.path != "" ? this.addPath(`.${newIndex}`) : this.addPath(newIndex);
+
+      jsonString = jsonString.replace(
+        new RegExp(`"${path}`, "g"),
+        `"${this.path}`
+      );
+      this.setDotNotations(JSON.parse(jsonString));
+      this.setMessagesByCurrentLanguage(dotNotationToObject(this.dotNotations));
+    },
+    setDotNotations(messages) {
+      this.dotNotations = objectToDotNotation(messages);
     },
   },
 });

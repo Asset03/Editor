@@ -41,6 +41,7 @@ app.post("/write-file", (req, res) => {
       console.error(err);
     } else {
       console.log("changed", filePath);
+      res.status(200).send("updated");
     }
   });
 });

@@ -166,9 +166,12 @@ export default {
     const editValue = ref(false);
 
     const onClickToggleObject = computed(() => (node) => {
+      console.log("Before: ", store.getPath);
       if (isObjectOpened(node)) {
+        store.removePath();
         openNodes.value = openNodes.value.filter((n) => n !== node);
       } else {
+        store.getPath != "" ? store.addPath(`.${node}`) : store.addPath(node);
         openNodes.value.push(node);
       }
     });
@@ -200,7 +203,12 @@ export default {
       editKey.value = !editKey.value;
     };
     const onChangeIndex = (event) => {
-      store.updateKey(props.messages, props.index, event.target.value);
+      store.getPath != ""
+        ? store.addPath(`.${props.index}`)
+        : store.addPath(props.index);
+
+      store.updateKey(store.getPath, event.target.value);
+      store.removePath();
     };
 
     const onClickEditValue = () => {

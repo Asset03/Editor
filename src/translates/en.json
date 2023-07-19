@@ -1,43 +1,8 @@
 {
-  "domain": {},
-  "title": "Academic Activities",
-  "description": "Service is a type of graphical user interface which often provides at-a-glance views of key performance indicators (KPIs) relevant to a particular objective or business process. In other usage, \"dashboard\" is another name for \"progress report\" or \"report\" and considered a form of data visualization.",
-  "syllabus": {
-    "description": "This service provides syllabuses",
-    "table": {
-      "no": "No",
-      "course-code-and-name": "Code/Name",
-      "editor": "Editor",
-      "department": "Department",
-      "available": "Available",
-      "status": "Status",
-      "year": "Year"
-    },
+  "curriculaa": {
+    "descriptiona": "Curricula description",
     "header": {
-      "title": "Syllabus"
-    },
-    "search": {
-      "title": "Filter",
-      "description": "This search form will be applied to only {year} year and {term} term.",
-      "course-code": "Course code",
-      "course-name": "Course name",
-      "department": "Department",
-      "available": "Available",
-      "editor": "Editor",
-      "status": "Status",
-      "year": "Year",
-      "placeholders": {
-        "course-code": "Enter a course code",
-        "course-name": "Enter a course name",
-        "editor": "Enter a editor"
-      }
-    },
-    "": ""
-  },
-  "curricula": {
-    "description": "Curricula description",
-    "header": {
-      "title": "Curricula"
+      "titlea": "Curricula"
     },
     "navigation": {
       "title": "Navigation",
