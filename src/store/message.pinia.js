@@ -4,12 +4,13 @@ export const useMessageStore = defineStore("messages", {
   state: () => {
     return {
       currentLanguage: "en",
-      messages: {},
+      messages: {}, // en-{},ru-{},kz-{},
     };
   },
   getters: {
     getCurrentLanguage: (state) => state.currentLanguage,
-    getMessages: (state) => state.messages[state.currentLanguage],
+    getMessagesByCurrentLanguage: (state) =>
+      state.messages[state.currentLanguage],
     getLanguages: (state) => Object.keys(state.messages),
   },
   actions: {
@@ -17,17 +18,19 @@ export const useMessageStore = defineStore("messages", {
       this.currentLanguage = currentLanguage;
     },
     setMessages(messages) {
+      // en-{},ru-{},kz-{}
       this.messages = messages;
     },
-    setMessagesByIndex(messages, index, val) {
+    setMessagesByCurrentLanguage(messages) {
+      // en-{},ru-{},kz-{}
+      this.messages[this.currentLanguage] = messages;
+    },
+    updateValue(messages, index, val) {
       messages[index] = val;
-      this.setMessages(this.messages);
+      this.setMessagesByCurrentLanguage(this.getMessagesByCurrentLanguage);
       // axios post
     },
-    removeItem(mess, index) {
-      delete mess[index];
-    },
-    updateValue(key, value) {},
+
     updateKey(messages, oldIndex, newIndex) {
       const keys = Object.keys(messages);
       const newObj = {};
@@ -38,9 +41,6 @@ export const useMessageStore = defineStore("messages", {
         newObj[myKey] = value;
       }
       this.setMessagesByCurrentLanguage(newObj);
-    },
-    setMessagesByCurrentLanguage(messages) {
-      this.messages[this.currentLanguage] = messages;
     },
   },
 });

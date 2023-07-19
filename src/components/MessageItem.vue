@@ -203,16 +203,14 @@ export default {
       editKey.value = !editKey.value;
     };
     const onChangeIndex = (event) => {
-      // console.log(event.target.value);
       store.updateKey(props.messages, props.index, event.target.value);
-      // change
     };
 
     const onClickEditValue = () => {
       editValue.value = !editValue.value;
     };
     const onChangeValue = (event) => {
-      store.setMessagesByIndex(props.messages, props.index, event.target.value);
+      store.updateValue(props.messages, props.index, event.target.value);
     };
     const dataRemoveModal = inject("dataRemoveModal");
     const dataAddPropertyModal = inject("dataAddPropertyModal");

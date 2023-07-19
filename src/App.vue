@@ -38,7 +38,7 @@ export default {
     const store = useMessageStore();
 
     const languages = computed(() => store.getLanguages);
-    const messages = computed(() => store.getMessages);
+    const messages = computed(() => store.getMessagesByCurrentLanguage);
     const currentLanguage = computed(() => store.getCurrentLanguage);
 
     const changeLanguage = computed(
@@ -64,8 +64,7 @@ export default {
     const onClickRemoveItem = () => {
       delete dataRemoveModal.data.messages[dataRemoveModal.data.index];
       dataRemoveModal.opened = false;
-      console.log("MESSAGE: ", messages.value);
-      store.setMessages(messages);
+      store.setMessagesByCurrentLanguage(messages);
     };
 
     provide("onClickRemoveItem", onClickRemoveItem);

@@ -76,7 +76,7 @@ export default {
   props: {},
   setup() {
     const store = useMessageStore();
-    const messages = computed(() => store.getMessages);
+    const messages = computed(() => store.getMessagesByCurrentLanguage);
 
     const dataAddPropertyModal = inject("dataAddPropertyModal");
     const isString = ref(true);
@@ -105,9 +105,8 @@ export default {
           ],
           ...newObject,
         };
-        store.setMessages(messages);
       }
-      console.log("EX: ", store.getMessages);
+      store.setMessagesByCurrentLanguage(messages);
     };
     return {
       dataAddPropertyModal,
