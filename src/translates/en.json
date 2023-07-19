@@ -1,35 +1,7 @@
 {
-  "domain": "Academic",
+  "domain": {},
   "title": "Academic Activities",
   "description": "Service is a type of graphical user interface which often provides at-a-glance views of key performance indicators (KPIs) relevant to a particular objective or business process. In other usage, \"dashboard\" is another name for \"progress report\" or \"report\" and considered a form of data visualization.",
-
-  "exam-date": {
-    "description": "This service provides the exam date of each course in the current semester.",
-    "table": {
-      "no": "No",
-      "instructor": "Instructor",
-      "type": "Type",
-      "assessment": "Assessment",
-      "start-date": "Start Date",
-      "close-date": "Close Date"
-    },
-    "header": {
-      "title": "Exam Date"
-    },
-    "search": {
-      "description": "This search form will be applied to only {year} year and {term} term.",
-      "instructor": "Instructor",
-      "type": "Type",
-      "assessment": "Assessment",
-      "department": "Department",
-      "start-date": "Start Date",
-      "close-date": "Close Date"
-    },
-    "form": {
-      "department": "Department"
-    }
-  },
-
   "syllabus": {
     "description": "This service provides syllabuses",
     "table": {
@@ -59,9 +31,9 @@
         "course-name": "Enter a course name",
         "editor": "Enter a editor"
       }
-    }
+    },
+    "": ""
   },
-
   "curricula": {
     "description": "Curricula description",
     "header": {
@@ -95,7 +67,6 @@
     },
     "empty-breadcrumb": "Select a department from the list"
   },
-
   "courses": {
     "header": {
       "title": "Courses",
@@ -107,7 +78,6 @@
       "credits": "{credits} credits",
       "ects": "{ects} ECTS"
     },
-
     "all-courses": {
       "search-form": {
         "title": "Search Courses",
@@ -115,38 +85,31 @@
       }
     }
   },
-
   "my-courses": {
     "header": {
       "title": "My Courses",
       "description": "This service provides the list of courses that you are currently enrolled in."
     },
     "no-data": "You are not enrolled in any course from selected {year} and {term} term. Contact your department for more information.",
-
     "course-card": {
       "description": "{courseCode}. {courseTitleEn} is a {type} course with {credits} credits and {ects} ECTS. This course belongs to {departmentTitle} department. Thought language is {courseLanguage}."
     }
   },
-
   "my-advisory": {
     "title": "My Advisory",
     "description": "This service provides the list of courses that you are currently enrolled in.",
-
     "filter": {
       "advisory": "My Advisory",
       "thesis": "My Thesis students"
     }
   },
-
   "all-students": {
     "title": "All students",
     "description": "All students description",
-
     "search": {
       "description": "All studnets search description"
     }
   },
-
   "schedule": {
     "title": "Course Schedule",
     "description": "Service is a type of graphical user interface which often provides at-a-glance views of key performance indicators (KPIs) relevant to a particular objective or business process. In other usage, \"dashboard\" is another name for \"progress report\" or \"report\" and considered a form of data visualization.",
@@ -220,7 +183,6 @@
       }
     }
   },
-
   "my-schedule": {
     "title": "My Schedule",
     "description": "This service provides your schedule",
@@ -237,16 +199,13 @@
       "toolbar-button": "Office Hours"
     }
   },
-
   "consent-requests": {
     "title": "Consent Requests",
     "description": "This service provides the list of consent requests that ever submitted."
   },
-
   "single-course": {
     "navigation": {
       "description": "This service provides the exam date of each course in the current semester.",
-
       "items": {
         "overview": "Overview",
         "overview-description": "Overview description",
@@ -338,7 +297,6 @@
   "single-student": {
     "navigation": {
       "description": "This service provides the exam date of each course in the current semester.",
-
       "items": {
         "information": "Information",
         "information-description": "Information description",
@@ -445,17 +403,16 @@
     },
     "attendance": {
       "statuses": {
-        "2": "Permitted",
-        "-1": "Not Tracked",
         "0": "Absent",
-        "1": "Present"
+        "1": "Present",
+        "2": "Permitted",
+        "-1": "Not Tracked"
       }
     },
     "course-registration": {
       "confirmed-course": "Current term courses (Confirmed)",
       "temporary-course": "Course(s) in Basket"
     },
-
     "curriculum": {
       "tabs": {
         "curriculum": "Curriculum",
@@ -463,7 +420,6 @@
         "electives": "Elective courses"
       }
     },
-
     "accounting": {
       "payments": "Payments",
       "discounts": "Discounts",

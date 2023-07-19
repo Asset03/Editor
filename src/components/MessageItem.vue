@@ -30,7 +30,7 @@
             v-if="!isObjectOpened(index)"
             class="ms-2 text-decoration-underline"
             :class="{ empty: isEmpty(item) }"
-            >{{ isEmpty(item) ? "empty" : "{...}" }}</span
+            >{{ isEmpty(item) ? "empty object" : "{...}" }}</span
           >
           <!-- write here in empty case -->
           <!-- actions -->
@@ -94,7 +94,7 @@
           v-if="!editValue"
           class="ms-2 text-decoration-underline"
           :class="{ empty: isEmpty(item) }"
-          >{{ isEmpty(item) ? "empty" : item }}</span
+          >{{ isEmpty(item) ? "empty string" : item }}</span
         >
         <input
           v-else
@@ -161,9 +161,6 @@ export default {
   setup(props) {
     const store = useMessageStore();
 
-    onMounted(() => {
-      // console.log("DATA: ", store.getMessages);
-    });
     const openNodes = ref([]);
     const editKey = ref(false);
     const editValue = ref(false);
@@ -196,7 +193,7 @@ export default {
         props.messages[props.index] = {};
       }
       // axios post
-      console.log(props.messages);
+      store.setMessagesByCurrentLanguage(store.getMessagesByCurrentLanguage);
     };
 
     const onClickEditKey = () => {

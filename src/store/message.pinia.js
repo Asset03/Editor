@@ -1,10 +1,12 @@
 import { defineStore } from "pinia";
+import axios from "axios";
 
 export const useMessageStore = defineStore("messages", {
   state: () => {
     return {
       currentLanguage: "en",
       messages: {}, // en-{},ru-{},kz-{},
+      indexes: [],
     };
   },
   getters: {
@@ -12,6 +14,7 @@ export const useMessageStore = defineStore("messages", {
     getMessagesByCurrentLanguage: (state) =>
       state.messages[state.currentLanguage],
     getLanguages: (state) => Object.keys(state.messages),
+    getIndexes: (state) => state.indexes,
   },
   actions: {
     setCurrentLanguage(currentLanguage) {
@@ -24,6 +27,18 @@ export const useMessageStore = defineStore("messages", {
     setMessagesByCurrentLanguage(messages) {
       // en-{},ru-{},kz-{}
       this.messages[this.currentLanguage] = messages;
+      const data = this.getMessagesByCurrentLanguage;
+      axios
+        .post(
+          `http://localhost:3000/write-file?param=${this.getCurrentLanguage}`,
+          { data }
+        )
+        .then(() => {
+          console.log(data);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     },
     updateValue(messages, index, val) {
       messages[index] = val;
@@ -40,7 +55,9 @@ export const useMessageStore = defineStore("messages", {
         const myKey = key === oldIndex ? newIndex : key;
         newObj[myKey] = value;
       }
-      this.setMessagesByCurrentLanguage(newObj);
+      messages = newObj;
+      console.log("NEW: ", messages);
+      this.setMessagesByCurrentLanguage(this.getMessagesByCurrentLanguage);
     },
   },
 });

@@ -32,6 +32,19 @@ app.get("/read-file", (req, res) => {
   });
 });
 
+app.post("/write-file", (req, res) => {
+  const param = req.query.param;
+  const filePath = `${folderPath}/${param}.json`;
+  const data = JSON.stringify(req.body.data, null, 2);
+  fs.writeFile(filePath, data, "utf8", (err) => {
+    if (err) {
+      console.error(err);
+    } else {
+      console.log("changed", filePath);
+    }
+  });
+});
+
 app.listen(3000, () => {
   console.log("started on port 3000...");
 });
