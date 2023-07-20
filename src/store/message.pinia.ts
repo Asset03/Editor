@@ -2,42 +2,51 @@ import { defineStore } from "pinia";
 import axios from "axios";
 
 import { useApp } from "@/app";
-
 const { objectToDotNotation, dotNotationToObject } = useApp();
+
+interface MessageObject {
+  [key: string]: string | object;
+}
+interface State {
+  currentLanguage: string;
+  messages: { [key: string]: MessageObject };
+  path: string;
+  dotNotations: Record<string, any>;
+}
 export const useMessageStore = defineStore("messages", {
-  state: () => {
+  state: (): State => {
     return {
       currentLanguage: "en",
-      messages: {}, // en-{},ru-{},kz-{},
+      messages: {},
       path: "",
       dotNotations: {},
     };
   },
   getters: {
-    getCurrentLanguage: (state) => state.currentLanguage,
-    getMessagesByCurrentLanguage: (state) =>
+    getCurrentLanguage: (state): string => state.currentLanguage,
+    getMessagesByCurrentLanguage: (state): MessageObject =>
       state.messages[state.currentLanguage],
-    getLanguages: (state) => Object.keys(state.messages),
-    getPath: (state) => state.path,
-    getDotNotations: (state) => state.dotNotations,
+    getLanguages: (state): string[] => Object.keys(state.messages),
+    getPath: (state): string => state.path,
+    getDotNotations: (state): Record<string, any> => state.dotNotations,
   },
   actions: {
-    addPath(index) {
+    addPath(index: string): void {
       this.path += index;
     },
-    removePath() {
+    removePath(): void {
       let arr = this.path.split(".");
       arr.pop();
       this.path = arr.join(".");
     },
-    setCurrentLanguage(currentLanguage) {
+    setCurrentLanguage(currentLanguage: string): void {
       this.currentLanguage = currentLanguage;
     },
-    setMessages(messages) {
+    setMessages(messages: { [key: string]: MessageObject }): void {
       // en-{},ru-{},kz-{}
       this.messages = messages;
     },
-    setMessagesByCurrentLanguage(messages) {
+    setMessagesByCurrentLanguage(messages: MessageObject): void {
       // en-{},ru-{},kz-{}
       this.messages[this.currentLanguage] = messages;
       const data = this.getMessagesByCurrentLanguage;
@@ -53,13 +62,13 @@ export const useMessageStore = defineStore("messages", {
           console.error(err);
         });
     },
-    updateValue(messages, index, val) {
+    updateValue(messages: MessageObject, index: string, val: MessageObject) {
       messages[index] = val;
       this.setMessagesByCurrentLanguage(this.getMessagesByCurrentLanguage);
       // axios post
     },
 
-    updateKey(path, newIndex) {
+    updateKey(path: string, newIndex: string): void {
       this.setDotNotations(this.getMessagesByCurrentLanguage);
       let jsonString = JSON.stringify(this.dotNotations);
       this.removePath();
@@ -73,7 +82,7 @@ export const useMessageStore = defineStore("messages", {
       this.setDotNotations(JSON.parse(jsonString));
       this.setMessagesByCurrentLanguage(dotNotationToObject(this.dotNotations));
     },
-    setDotNotations(messages) {
+    setDotNotations(messages: MessageObject): void {
       this.dotNotations = objectToDotNotation(messages);
     },
   },

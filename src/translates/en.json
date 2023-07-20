@@ -1,394 +1,517 @@
 {
-  "curriculaa": {
-    "descriptiona": "Curricula description",
-    "header": {
-      "titlea": "Curricula"
+  "common": {
+    "currentlya": "a",
+    "yes": "Yes",
+    "no": "No",
+    "continue": "Continue",
+    "action": "Action",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "course": "Course",
+    "delete": "Delete",
+    "remove": "Remove",
+    "update": "Update",
+    "filter": "Filter",
+    "copy": "Copy",
+    "search": "Search",
+    "more": "More",
+    "submit": "Submit",
+    "confirm": "Confirm",
+    "no-data": "No data is available",
+    "next": "Next",
+    "open": "Open",
+    "previous": "Previous",
+    "restart": "Restart",
+    "no-messages": "No messages",
+    "read-more": "Read more",
+    "not-selected": "Not selected",
+    "summary": "Summary",
+    "active": "Active",
+    "all": "All",
+    "no-description": "No description",
+    "uuid": "UUID",
+    "posted-at": "Posted at",
+    "language": "Language",
+    "post": "Post",
+    "title": "Title",
+    "learn-more": "Learn more",
+    "less": "Less",
+    "send": "Send",
+    "select": "Select",
+    "change": "Change",
+    "to": "To",
+    "back": "Back",
+    "reset": "Reset",
+    "de-select": "De-select",
+    "select-all": "Select all",
+    "all-selected": "All selected",
+    "main": "Main",
+    "discard": "Discard",
+    "upload": "Upload",
+    "loading": "Loading",
+    "view-all": "View all",
+    "actions": "Actions",
+    "mode": "Mode",
+    "new": "New",
+    "full-name": "Full name",
+    "create": "Create",
+    "details": "Details",
+    "year-s": "year(s)",
+    "preview": "Preview",
+    "steps": "Steps",
+    "step": "Step {step}",
+    "show": "Show",
+    "view": "View",
+    "filter-by": "Filter by",
+    "view-more": "View more",
+    "can-not-find-value": "Can not find {value}!",
+    "credits": "Credits",
+    "ects": "ECTS",
+    "quota": "Quota",
+    "room": "Room",
+    "instructor": "Instructor",
+    "year-terms": "Year/Terms",
+    "year": "Year",
+    "term": "{term} term",
+    "navigation": "Navigation",
+    "accepted": "Accepted",
+    "requested": "Requested",
+    "rejected": "Rejected",
+    "accept": "Accept",
+    "reject": "Reject",
+    "section": "Section",
+    "course-code": "Course code",
+    "termWord": "Term",
+    "grade": "Grade",
+    "grade-letter": "Letter grade",
+    "open-attendance": "Open attendance",
+    "open-grades": "Open grades",
+    "download": "Download",
+    "download-print": "Download/Print",
+    "status": "Status",
+    "years": {
+      "year-dots": "{year} y."
     },
-    "navigation": {
-      "title": "Navigation",
-      "description": "Navigation description"
+    "week-days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
     },
-    "department": {
-      "title": "Departments"
+    "terms": {
+      "1": "Fall",
+      "2": "Spring",
+      "3": "Summer"
     },
-    "program": {
-      "title": "Programs"
+    "views": {
+      "card": "Card",
+      "card-description": "Enable card view",
+      "table": "Table",
+      "table-description": "Enable table view",
+      "list": "List",
+      "list-description": "Enable list view"
     },
-    "course": {
-      "title": "Courses",
-      "electives-title": "Elective sections",
-      "references-title": "References"
-    },
-    "elective-type": {
-      "ae": "Area electives",
-      "nae": "Non-area electives",
-      "nte": "Non Theoretical Electives",
-      "rc": "Requisite Coursess"
-    },
-    "reference-type": {
-      "n": "Normal (One to One)",
-      "s": "Split (One to Many)",
-      "j": "Join (Many toMany)"
-    },
-    "empty-breadcrumb": "Select a department from the list"
-  },
-  "courses": {
-    "header": {
-      "title": "Courses",
-      "description": "This service provides the list of courses that you are currently enrolled in."
-    },
-    "common": {
-      "theory": "{theory} theory",
-      "practice": "{practice} practice",
-      "credits": "{credits} credits",
-      "ects": "{ects} ECTS"
-    },
-    "all-courses": {
-      "search-form": {
-        "title": "Search Courses",
-        "description": "This form provides search engine for courses from all departments and academic years."
-      }
-    }
-  },
-  "my-courses": {
-    "header": {
-      "title": "My Courses",
-      "description": "This service provides the list of courses that you are currently enrolled in."
-    },
-    "no-data": "You are not enrolled in any course from selected {year} and {term} term. Contact your department for more information.",
-    "course-card": {
-      "description": "{courseCode}. {courseTitleEn} is a {type} course with {credits} credits and {ects} ECTS. This course belongs to {departmentTitle} department. Thought language is {courseLanguage}."
-    }
-  },
-  "my-advisory": {
-    "title": "My Advisory",
-    "description": "This service provides the list of courses that you are currently enrolled in.",
-    "filter": {
-      "advisory": "My Advisory",
-      "thesis": "My Thesis students"
-    }
-  },
-  "all-students": {
-    "title": "All students",
-    "description": "All students description",
-    "search": {
-      "description": "All studnets search description"
-    }
-  },
-  "schedule": {
-    "title": "Course Schedule",
-    "description": "Service is a type of graphical user interface which often provides at-a-glance views of key performance indicators (KPIs) relevant to a particular objective or business process. In other usage, \"dashboard\" is another name for \"progress report\" or \"report\" and considered a form of data visualization.",
-    "filter": {
-      "title": "Filter",
-      "description": "This search form will be applied to only {year} year and {term} term.",
-      "filter-by": "Filter by",
-      "individual": {
-        "title": "Individual",
-        "description": "Individual description"
-      },
-      "bulk": {
-        "title": "Bulk",
-        "description": "Bulk description"
-      },
-      "instructor": "Instructor",
-      "instructor-placeholder": "Enter a instructor",
-      "speciality": "Speciality",
-      "speciality-placeholder": "Enter a speciality",
-      "room": "Room",
-      "room-placeholder": "Enter a room",
-      "error": {
-        "instructor-not-found": "Instructor not found",
-        "speciality-not-found": "Speciality not found",
-        "room-not-found": "Room not found"
-      }
-    },
-    "bulk": {
-      "title": "Bulk",
-      "what-is-title": "What is bulk?",
-      "what-is-description": "Bulk description",
-      "print": "Print",
-      "export-to-excel": "Export to excel"
+    "courses": {
+      "lecture": "Lecture",
+      "practice": "Practice",
+      "laboratory": "Laboratory"
     },
     "table": {
-      "title": "Schedule",
-      "extend": "Extend",
-      "day": "Day",
-      "hour": "Hour",
-      "credit": "Cr",
-      "instructor": "Instructor",
+      "title": "Title",
+      "description": "Description",
+      "start-date": "Start date",
+      "end-date": "End date",
+      "date": "Date",
+      "authors": "Authors"
+    },
+    "table-fields": {
+      "no": "No",
+      "course-code": "Course code",
+      "course-title": "Course title",
+      "code": "Code",
+      "department": "Department",
+      "department-title": "Department title",
+      "course-prefixes": "Course prefixes",
+      "responsible-person": "Responsible person",
+      "level-language": "Level/Language",
+      "code-cipher": "Code/Cipher",
+      "program-title": "Program title",
+      "faculty": "Faculty",
+      "details": "Details",
+      "actions": "Actions",
+      "course-type": "Course type",
+      "course-section": "Course section",
+      "course-assessment": "Course assessment",
+      "close-date": "Close date",
+      "open-date": "Open date",
+      "language": "Language",
+      "status": "Status",
+      "exam-date": "Exam date",
+      "theory": "Th",
+      "practice": "Pr",
+      "credits": "Credits",
       "ects": "ECTS",
-      "quota": "Quota",
+      "requisite": "Req",
+      "type": "Type",
+      "equicode": "Equicode",
+      "references": "References",
+      "student-id": "Student ID",
+      "fullname": "Full name",
+      "students": "Students",
+      "specialty-id": "Specialty ID",
+      "specialty-name": "Specialty",
+      "year-term": "Year/Term",
+      "course-lang": "Course language",
+      "credits-ects": "Credits/ECTS",
+      "class": "Class",
+      "entrance-year": "Entrance year",
+      "finance": "Finance",
+      "level": "Level",
+      "message": "Message",
+      "lecture-sections": "N",
+      "practice-sections": "P",
+      "lab-sections": "L",
+      "price": "Price",
+      "statistics": "Statistics",
+      "title": "Title",
+      "lesson-date": "Date",
+      "lesson-start": "Start Time",
       "room": "Room",
-      "students": "Students (quota)",
-      "week-days": {
-        "monday": {
-          "title": "Monday",
-          "abbreviation": "Mo"
+      "attendance": "Attendance",
+      "absence-rate": "Absence rate",
+      "total-grade": "Total Grade",
+      "letter-grade": "Letter Grade",
+      "assessment": "Assessment",
+      "grade": "Grade",
+      "average": "Average",
+      "grade-letter": "Letter grade",
+      "grade-point": "Point",
+      "grade-traditional": "Traditional",
+      "internal-credits": "Internal credits",
+      "credit-ects": "Credits / ECTS",
+      "payment-date": "Payment date",
+      "payment-code-title": "Payment code title",
+      "payment-amount": "Payment amount",
+      "payment-remainder": "Payment remainder",
+      "percentage": "Percentage",
+      "calculated-amount": "Calculated amount",
+      "year": "Year",
+      "term": "Term",
+      "department-fee": "Department fee",
+      "calculated-fee": "Calculated fee",
+      "balance": "Balance",
+      "charges": "Charges",
+      "total-balance": "Total balance",
+      "remainder": "Remainder",
+      "currency": "Currency",
+      "speciality": "Speciality",
+      "average-short": "Avg",
+      "letter-grade-short": "LG",
+      "midterm": "Midterm",
+      "final": "Final",
+      "student": "Student",
+      "section": "Section",
+      "course": "Course",
+      "present": "Present",
+      "absent": "Absent",
+      "permitted": "Permitted",
+      "total": "Total",
+      "teor": "Tr",
+      "prat": "Pr",
+      "lab": "Lb",
+      "title-kz": "Title (KZ)",
+      "title-ru": "Title (RU)",
+      "title-en": "Title (EN)"
+    },
+    "form-fields": {
+      "year": "Year",
+      "department": "Department",
+      "course-code": "Course code",
+      "course-name": "Course name",
+      "equicode": "Equicode",
+      "instructor": "Instructor",
+      "section-type": "Section type",
+      "assessment": "Assessment",
+      "status-type": "Status",
+      "course-title": "Course title",
+      "editor": "Editor",
+      "filter-by": "Filter by",
+      "filter-value": "Filter",
+      "year-terms": "Year/Term:",
+      "speciality": "Speciality",
+      "student-id": "Student ID",
+      "student-name": "Student name",
+      "student-surname": "Student surname",
+      "student-status": "Status",
+      "track": "Track",
+      "section": "Section"
+    },
+    "form-fields-placeholders": {
+      "instructor": "Enter instructor's name",
+      "speciality": "Enter a speciality",
+      "student-name": "Enter student's name",
+      "student-surname": "Enter student's surname",
+      "student-id": "Enter student ID",
+      "course-code": "Enter course code",
+      "course-title": "Enter course title",
+      "editor": "Enter editor's name"
+    },
+    "assessments": {
+      "FIN": "Final exam",
+      "MID": "Midterm exam",
+      "PRAC": "Practice",
+      "LAB": "Laboratory",
+      "PF": "Pre-final exam",
+      "FA": "Pre-final exam"
+    },
+    "transcript": {
+      "student-id": "Student ID",
+      "student-fullname": "Student fullname",
+      "edu-level": "Education level",
+      "entry-date": "Entry date",
+      "faculty": "Faculty",
+      "speciality-title": "Speciality",
+      "edu-language": "Education language",
+      "graduation-date": "Graduation date",
+      "prepared": "Prepared Date"
+    },
+    "course-types": {
+      "N": "Lecture (Normal)",
+      "P": "Practice",
+      "L": "Laboratory"
+    },
+    "documents": {
+      "midterm-participation-list": "Midterm participation list",
+      "final-participation-list": "Final participation list",
+      "exam-reports": "Exam reports",
+      "course-summary-report": "Course summary report"
+    },
+    "tour": {
+      "title": "Need help?",
+      "description": "Click here to see detailed instructions."
+    },
+    "layout": {
+      "drawers": {
+        "activity": {
+          "header": "Calendar events",
+          "event-description": "{title} is started on {startDate} at {startTime} and will be/was finished on {endDate} at {endTime}"
+        }
+      },
+      "menus": {
+        "quick-links": {
+          "title": "Quick Links",
+          "rules-and-regulations": "Rules and Regulations",
+          "reports": "Reports",
+          "services": "Services",
+          "academic-activities": "Academic Activities"
         },
-        "tuesday": {
-          "title": "Tuesday",
-          "abbreviation": "Tu"
+        "notifications": {
+          "title": "Notifications",
+          "no-notifications": "No notifications",
+          "updates": "Updates",
+          "announcements": "Broadcasts"
+        }
+      },
+      "sidebar": {
+        "menu": {
+          "dashboard": {
+            "heading": "Dashboard",
+            "pages": {
+              "dashboard": "Dashboard"
+            }
+          },
+          "academic": {
+            "heading": "Academic Activities",
+            "pages": {
+              "academic-panel": "Academic Panel",
+              "courses": "Courses",
+              "all-courses": "All Courses (Search)",
+              "my-courses": "My Courses",
+              "my-schedule": "My Schedule",
+              "consent-requests": "Consent Requests",
+              "students": "Students",
+              "all-students": "All Students (Search)",
+              "my-advisory": "Advisory",
+              "management": "Management",
+              "section-management": "Section Management",
+              "schedule-management": "Schedule Management",
+              "syllabus-management": "Syllabus Management",
+              "curricula-management": "Curricula Management",
+              "all-schedule": "Schedule",
+              "syllabuses": "Syllabuses",
+              "exam-dates": "Exam Dates",
+              "curricula": "Curricula"
+            }
+          },
+          "release": {
+            "heading": "System",
+            "pages": {
+              "changelog": "Changelog",
+              "support": "Support"
+            }
+          },
+          "administrative": {
+            "heading": "Administrative",
+            "pages": {
+              "rules-and-regulations": "Rules and Regulations",
+              "system-calendar": "System Calendar",
+              "staff-list": "Staff List",
+              "message-board": "Message Board",
+              "gate-entry": "Gate Entry"
+            }
+          },
+          "service": {
+            "heading": "Services",
+            "pages": {
+              "service-panel": "Service Panel",
+              "service-list": "All services",
+              "helpdesk-service": "Helpdesk",
+              "dms-service": "Document Management System",
+              "mail-service": "Mail Service",
+              "website-service": "Official Website",
+              "library-service": "SDU Library",
+              "moodle-service": "Moodle LMS",
+              "message-broadcast": {
+                "title": "Message Broadcast",
+                "all-messages": "Inbox",
+                "new-message": "New Message"
+              }
+            }
+          },
+          "profile": {
+            "heading": "Profile",
+            "pages": {
+              "profile": "My Profile",
+              "cv": "My CV",
+              "settings": "Settings"
+            },
+            "sub-pages": {
+              "overview": "Overview",
+              "addresses": "Address",
+              "biography": "Autobiography",
+              "contacts": "Contacts",
+              "education": "Education",
+              "skills": "Skills",
+              "experience": "Experience",
+              "settings": "Settings",
+              "publications": "Publications"
+            }
+          },
+          "manager": {
+            "heading": "Manager",
+            "pages": {
+              "knowledge-base": "Knowledge Base",
+              "all-articles": "All Articles",
+              "new-article": "New Article",
+              "all-categories": "All Categories"
+            }
+          }
         },
-        "wednesday": {
-          "title": "Wednesday",
-          "abbreviation": "We"
-        },
-        "thursday": {
-          "title": "Thursday",
-          "abbreviation": "Th"
-        },
-        "friday": {
-          "title": "Friday",
-          "abbreviation": "Fr"
-        },
-        "saturday": {
-          "title": "Saturday",
-          "abbreviation": "Sa"
+        "footer": {
+          "title": "Guides & Docs",
+          "title-tooltip": "Explore our guides and documentation to learn more about using our platform."
+        }
+      },
+      "footer": {
+        "about-title": "About",
+        "support-title": "Support",
+        "privacy-policy-title": "Privacy Policy"
+      },
+      "mode": {
+        "light": "Light",
+        "dark": "Dark",
+        "auto": "Auto"
+      },
+      "header": {
+        "user-menu": {
+          "my-profile": "My profile",
+          "my-courses": "My courses",
+          "course-schedule": "My schedule",
+          "electronic-attendance": "Electronic attendance",
+          "grade-submission": "Grade submission",
+          "my-students": "My students",
+          "academic-students": "Students",
+          "students-search": "Search a student",
+          "system-calendar": "System calendar",
+          "rules-and-regulations": "Rules and regulations",
+          "language": "Language",
+          "settings": "Settings",
+          "sign-out": "Sign out"
         }
       }
+    },
+    "alert-service": {
+      "confirm": "Confirm",
+      "are-you-sure": "Are you sure?",
+      "yes-continue": "Yes, continue",
+      "no-cancel": "No, cancel"
+    },
+    "pages": {
+      "error-not-found-page": "Page not found"
+    },
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
     }
   },
-  "my-schedule": {
-    "title": "My Schedule",
-    "description": "This service provides your schedule",
-    "integrate": "Integrate",
-    "export": "Export as/to",
-    "actions": {
-      "google": "Google Calendar",
-      "file-earmark-excel-fill": "Excel",
-      "microsoft": "Outlook Calendar",
-      "printer-fill": "Print"
-    },
-    "office-hours": {
-      "title": "Office Hours",
-      "toolbar-button": "Office Hours"
-    }
-  },
-  "consent-requests": {
-    "title": "Consent Requests",
-    "description": "This service provides the list of consent requests that ever submitted."
-  },
-  "single-course": {
-    "navigation": {
-      "description": "This service provides the exam date of each course in the current semester.",
-      "items": {
-        "overview": "Overview",
-        "overview-description": "Overview description",
-        "grades": "Grades",
-        "grades-description": "Grades description",
-        "attendance": "Attendance",
-        "attendance-description": "Attendance description",
-        "concent-request": "Concent Requests",
-        "concent-request-description": "Concent Requests description",
-        "exam-dates": "Exam Dates",
-        "exam-dates-description": "Exam Dates description",
-        "schedule": "Schedule",
-        "schedule-description": "Schedule description",
-        "syllabus": "Syllabus",
-        "syllabus-description": "Syllabus description",
-        "students": "Students",
-        "students-description": "Students description",
-        "history": "Statistics (History)",
-        "history-description": "History description",
-        "moodle": "Moodle (Integration)",
-        "moodle-description": "Moodle description",
-        "settings": "Settings",
-        "settings-description": "Settings description",
-        "documents": "Documents",
-        "documents-description": "Documents description"
-      }
-    },
-    "overview": {
-      "alert": {
-        "title": "Welcome to the course page!",
-        "description": "This page is designed to provide you with all the information you need about the course. You can navigate through the tabs to access the information you need. If you have any questions, please contact the instructor."
+  "phrases": {
+    "link-to-need-help": "All instructions are in \"Need help?\"",
+    "please-wait": "Please wait...",
+    "view-all": "View All",
+    "go-back": "Go Back",
+    "go-to": "Go to",
+    "no-records": "No Records",
+    "launch-tour-title": "Launch Tour",
+    "message-send-at-by": "Sent at {sendAt} by {sentBy}",
+    "need-your-attention": "Need your attention!",
+    "open-in-new-window": "Open {src} in new window",
+    "year-term": "{year} year. {term} term",
+    "year": "{year} year",
+    "click-to-download": "Click to download",
+    "created-at": "Created at {date}",
+    "uploaded-at": "Uploaded at {date}",
+    "file-size": "File size: {size}",
+    "save-changes": "Save changes",
+    "saving": "Saving...",
+    "successfully-updated": "Successfully updated",
+    "form-error": "Please, fill all the required fields.",
+    "form-error-invalid": "Please, fill all the required fields with valid data.",
+    "label-passed-date-ago": "{label} is passed {days} days ago",
+    "label-going-date-ago": "{label} will be after {days} days ago",
+    "url-field-error": "Input must be a link",
+    "system": {
+      "error-404": {
+        "title": "Opps",
+        "message": "The page you are looking for was not found.",
+        "back": "Go back",
+        "back-to-dashboard": "Back to dashboard"
       },
-      "information": "Information",
-      "details": "Specification/Details",
-      "requisites": {
-        "title": "Requisites",
-        "type": "Type",
-        "expression": "Expression",
-        "ar": "AR",
-        "pr": "PR",
-        "cr": "CR"
-      },
-      "course-code": "Course Code",
-      "equ-code": "Equi Code",
-      "title": "Title",
-      "title-kz": "Title (KZ)",
-      "title-en": "Title (EN)",
-      "title-ru": "Title (RU)",
-      "department": "Department",
-      "period-code": "Period Code",
-      "semester": "Semester",
-      "create-date": "Create Date",
-      "credit": "Credits",
-      "theory": "Theory",
-      "practice": "Practice",
-      "lab": "Lab",
-      "ects": "ECTS",
-      "language": "Language",
-      "type": "Type",
-      "grading-type": "Grading Type"
-    },
-    "history": {
-      "information-title": "General Information",
-      "attendance-title": "Attendance",
-      "grades-title": "Grades",
-      "statistics": {
-        "title": "Statistics",
-        "sections": "Sections",
-        "opened-sections": "Opened Sections",
-        "average-students-enrolled": "Average Students Enrolled",
-        "minimum-students-enrolled": "Minimum Students Enrolled",
-        "maximum-students-enrolled": "Maximum Students Enrolled",
-        "average-opened-quota": "Average Opened Quota",
-        "grades": "Grades",
-        "average": "Average",
-        "minimum": "Minimum",
-        "maximum": "Maximum",
-        "median": "Median",
-        "mode": "Mode",
-        "students": "Students",
-        "enrolled-students": "Enrolled Students",
-        "course-failed": "Course Failed",
-        "course-passed": "Course Passed",
-        "instructors": "Instructors",
-        "type": "Type"
-      }
-    }
-  },
-  "single-student": {
-    "navigation": {
-      "description": "This service provides the exam date of each course in the current semester.",
-      "items": {
-        "information": "Information",
-        "information-description": "Information description",
-        "course-registration": "Course Registration",
-        "course-registration-description": "Course Registration description",
-        "schedule": "Schedule",
-        "schedule-description": "Schedule description",
-        "attendance": "Attendance",
-        "attendance-description": "Attendance description",
-        "grades": "Grades",
-        "grades-description": "Grades description",
-        "curriculum": "Curriculum",
-        "curriculum-description": "Curriculum description",
-        "transcript": "Transcript",
-        "transcript-description": "Transcript description",
-        "accounting": "Accounting",
-        "accounting-description": "Accounting description"
-      },
-      "sidebar-information": {
-        "department": "Department",
-        "entrance-year": "Entrance year",
-        "advisor": "Advisor",
-        "status": "Status",
-        "debt": "Debt",
-        "education-level-language": "Education level & language"
+      "error-500": {
+        "title": "System Error",
+        "message": "Something went wrong! Please try again later.",
+        "back": "Go back"
       }
     },
-    "information": {
-      "title": "Main Information",
-      "psw-retrieve-email": "PSW Retrieve Email",
-      "university-email": "University Email",
-      "birth-date": "Birth Date",
-      "marriage-status": "Marriage Status",
-      "citizenship": "Citizenship",
-      "iin": "IIN No",
-      "iban": "IBAN No",
-      "document-type": "Document Type",
-      "document-no": "Document No",
-      "document-authority": "Document Authority",
-      "document-issue-date": "Document Issue Date",
-      "attestat-type": "Attestat Type",
-      "attestat-no": "Attestat No",
-      "attestat-gpa": "Attestat GPA",
-      "attestat-issue-date": "Attestat Issue Date",
-      "entrance-exam": "Entrance Exam",
-      "exam-score": "UNT Score",
-      "exam-code": "UNT Code",
-      "exam-issue-date": "UNT Issue Date",
-      "grant-type": "Grant Type",
-      "grant-certificate": "Grant Certificate",
-      "preparation-course": "Preparation Course",
-      "language-skills": "Language Skills",
-      "school": "School"
-    },
-    "contact": {
-      "title": "Contacts",
-      "type": "Type",
-      "contact": "Contact",
-      "note": "Note"
-    },
-    "address": {
-      "title": "Addresses",
-      "type": "Type",
-      "country": "Country",
-      "province": "Province",
-      "region": "Region",
-      "city": "City",
-      "address-line": "Address Line"
-    },
-    "parent-information": {
-      "title": "Parent Information",
-      "parent-type": "Parent Type",
-      "name": "Name",
-      "surname": "Surname",
-      "profession": "Profession",
-      "birth-date": "Birth Date",
-      "email": "Email",
-      "telephone": "Telephone",
-      "mobile": "Mobile",
-      "working-place": "Working Place"
-    },
-    "decision": {
-      "title": "Decisions",
-      "type": "Type",
-      "date": "Date",
-      "subject": "Subject",
-      "decision-no": "Decision No",
-      "description": "Description"
-    },
-    "advisor-opinion": {
-      "title": "Advisor Opinions",
-      "date": "Date",
-      "advisor": "Advisor",
-      "content": "Content"
-    },
-    "dissertation": {
-      "title": "Dissertations",
-      "reviewer": "Reviewer",
-      "edu-level": "Education Level",
-      "university": "University",
-      "teacher": "Teacher",
-      "begin-year": "Begin Year",
-      "defence-year": "Defence Year"
-    },
-    "attendance": {
-      "statuses": {
-        "0": "Absent",
-        "1": "Present",
-        "2": "Permitted",
-        "-1": "Not Tracked"
+    "errors": {
+      "resource-message": "The resource you are looking for was not found or having some error.",
+      "request-message": "The request you are looking for was not found or having some error.",
+      "form": {
+        "url-field-error": "Please enter URL"
       }
-    },
-    "course-registration": {
-      "confirmed-course": "Current term courses (Confirmed)",
-      "temporary-course": "Course(s) in Basket"
-    },
-    "curriculum": {
-      "tabs": {
-        "curriculum": "Curriculum",
-        "references": "References",
-        "electives": "Elective courses"
-      }
-    },
-    "accounting": {
-      "payments": "Payments",
-      "discounts": "Discounts",
-      "charges": "Charges"
     }
   }
 }

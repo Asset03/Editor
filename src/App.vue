@@ -20,8 +20,8 @@
 
 <script>
 import axios from "axios";
-import { onMounted, computed, provide, ref, reactive, watch } from "vue";
-import { useMessageStore } from "@/store/message.pinia.js";
+import { onMounted, computed, provide, reactive } from "vue";
+import { useMessageStore } from "@/store/message.pinia";
 
 import MessageItem from "./components/MessageItem.vue";
 import RemoveModal from "./components/RemoveModal.vue";
